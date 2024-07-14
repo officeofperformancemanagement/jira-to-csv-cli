@@ -1,31 +1,31 @@
 {
     "name": "jira-to-csv-cli",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "CLI for Exporting Issues from JIRA to a CSV",
     "main": "./index.js",
     "bin": {
-      "jira-to-csv-cli": "./bin/jira-to-csv-cli.js"
+        "jira-to-csv-cli": "./bin/jira-to-csv-cli.js"
     },
     "files": [
-      "./index.js",
-      "./bin/jira-to-csv-cli.js"
+        "./index.js",
+        "./bin/jira-to-csv-cli.js"
     ],
     "scripts": {
-      "build": "mkdir -p bin && echo \"#!/usr/bin/env node\n\" > ./bin/jira-to-csv-cli.js && cat index.js >> ./bin/jira-to-csv-cli.js",
-      "f": "npm run format",
-      "format": "npx prettier --arrow-parens=avoid --print-width=120 --trailing-comma=none --write *.js",
-      "setup": "cd test-data && sh setup.sh",
-      "test": "./test.sh"
+        "build": "mkdir -p bin && echo \"#!/usr/bin/env node\n\" > ./bin/jira-to-csv-cli.js && cat index.js >> ./bin/jira-to-csv-cli.js",
+        "f": "npm run format",
+        "format": "npx prettier --arrow-parens=avoid --print-width=120 --trailing-comma=none --write *.js",
+        "setup": "cd test-data && sh setup.sh",
+        "test": "./test.sh"
     },
     "keywords": [
-      "atlassian",
-      "csv",
-      "issues",
-      "jira"
+        "atlassian",
+        "csv",
+        "issues",
+        "jira"
     ],
     "author": "Daniel J. Dufour",
     "license": "CC0-1.0",
     "dependencies": {
-      "jira-to-csv": "^0.0.1"
+        "jira-to-csv": "^0.0.1"
     }
-  }
+}
