@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 if (require.main === module) {
   const fs = require("node:fs");
   const util = require("node:util");
@@ -17,11 +15,20 @@ if (require.main === module) {
       "debug-level": {
         type: "string"
       },
+      "expand-time-in-status": {
+        type: "boolean"
+      },
       jql: {
+        type: "string"
+      },
+      "max-description-length": {
         type: "string"
       },
       "max-issues": {
         type: "string"
+      },
+      "optimize-memory": {
+        type: "boolean"
       },
       output: {
         type: "string"
@@ -47,8 +54,11 @@ if (require.main === module) {
   const api_token = values["api-token"];
   const user_email = values["user-email"];
   const debug_level = Number(values["debug-level"] || 0);
+  const expand_time_in_status = Boolean(values["expand-time-in-status"] || false);
+  const max_description_length = Number(values["max-description-length"] || Infinity);
   const max_issues = Number(values["max-issues"] || Infinity);
   const output = values.output;
+  const optimize_memory = Boolean(values["optimize-memory"] || false);
   const skipEmptyColumns = values["skip-empty-columns"] || false;
   const wait = Number(values.wait || 0);
 
@@ -70,7 +80,10 @@ if (require.main === module) {
     api_token,
     user_email,
     debug_level,
+    expand_time_in_status,
     max_issues,
+    max_description_length,
+    optimize_memory,
     jql,
     skipEmptyColumns,
     wait

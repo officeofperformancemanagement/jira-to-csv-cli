@@ -11,7 +11,7 @@
         "./bin/jira-to-csv-cli.js"
     ],
     "scripts": {
-        "build": "mkdir -p bin && echo \"#!/usr/bin/env node\n\" > ./bin/jira-to-csv-cli.js && cat index.js >> ./bin/jira-to-csv-cli.js",
+        "build": "cp ./index.js ./bin/jira-to-csv-cli.js",
         "f": "npm run format",
         "format": "npx prettier --arrow-parens=avoid --print-width=120 --trailing-comma=none --write *.js",
         "setup": "cd test-data && sh setup.sh",
@@ -26,6 +26,6 @@
     "author": "Daniel J. Dufour",
     "license": "CC0-1.0",
     "dependencies": {
-        "jira-to-csv": "^0.0.1"
+        "jira-to-csv": "^0.1.0"
     }
 }
