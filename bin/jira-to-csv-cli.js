@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 if (require.main === module) {
   const fs = require("node:fs");
   const util = require("node:util");

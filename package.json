@@ -11,7 +11,7 @@
         "./bin/jira-to-csv-cli.js"
     ],
     "scripts": {
-        "build": "cp ./index.js ./bin/jira-to-csv-cli.js",
+        "build": "mkdir -p bin && echo \"#!/usr/bin/env node\n\" > ./bin/jira-to-csv-cli.js && cat index.js >> ./bin/jira-to-csv-cli.js",
         "f": "npm run format",
         "format": "npx prettier --arrow-parens=avoid --print-width=120 --trailing-comma=none --write *.js",
         "setup": "cd test-data && sh setup.sh",
